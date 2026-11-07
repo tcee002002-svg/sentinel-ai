@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0b0a12">
+<title>Sentinel AI — Trading Intelligence</title>
+<style>
+:root{--bg:#0b0a12;--panel:#14121f;--panel2:#191629;--line:#29243b;--purple:#8b6cff;--purple2:#a18bff;--text:#f5f3ff;--muted:#a5a0b7;--green:#5bd6a0;--red:#ff7d91}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 75% -10%,#241b43 0,transparent 42%),var(--bg);color:var(--text);font:15px/1.5 Inter,system-ui,-apple-system,Segoe UI,sans-serif}
+button,input,select,textarea{font:inherit}button{cursor:pointer}.shell{display:flex;min-height:100vh}.sidebar{width:245px;padding:26px 18px;border-right:1px solid var(--line);background:#0d0b15;position:fixed;inset:0 auto 0 0;display:flex;flex-direction:column;z-index:5}.brand{display:flex;align-items:center;gap:11px;font-size:20px;font-weight:800;letter-spacing:.2px;margin:4px 8px 38px}.logo{width:37px;height:37px;border-radius:12px;background:linear-gradient(145deg,#a18bff,#6545d8);display:grid;place-items:center;font-weight:900;color:white;box-shadow:0 8px 25px #8062ff44}.nav-label{font-size:10px;letter-spacing:1.5px;color:#777188;margin:0 10px 10px}.nav a{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--muted);padding:11px 12px;border-radius:11px;margin:4px 0}.nav a.active,.nav a:hover{background:#211b35;color:white}.nav a.active{box-shadow:inset 3px 0 var(--purple)}.nav-icon{width:20px;text-align:center;color:var(--purple2)}.side-bottom{margin-top:auto}.free-tag{border:1px solid #3b3158;background:#171326;border-radius:13px;padding:14px;color:var(--muted);font-size:12px}.free-tag strong{display:block;color:#fff;font-size:14px;margin-bottom:4px}.main{margin-left:245px;width:calc(100% - 245px);padding:28px clamp(18px,4vw,48px) 50px;max-width:1600px}.top{display:flex;justify-content:space-between;align-items:center;gap:15px;margin-bottom:30px}.eyebrow{color:var(--purple2);font-size:11px;letter-spacing:1.7px;text-transform:uppercase;font-weight:700}.top h1{font-size:clamp(25px,3vw,34px);margin:5px 0 0;letter-spacing:-1px}.user-chip{border:1px solid var(--line);background:#151220;border-radius:30px;padding:8px 13px;color:var(--muted);font-size:12px}.grid{display:grid;grid-template-columns:1.45fr .85fr;gap:18px}.card{background:linear-gradient(145deg,#171424,#12101b);border:1px solid var(--line);border-radius:17px;padding:20px;box-shadow:0 12px 35px #0002}.card h2{font-size:17px;margin:0 0 5px}.sub{color:var(--muted);font-size:12px;margin:0 0 18px}.upload{border:1px dashed #65538f;background:#171326;border-radius:14px;min-height:210px;display:flex;align-items:center;justify-content:center;text-align:center;padding:20px;position:relative;overflow:hidden}.upload input{position:absolute;inset:0;opacity:0;width:100%;cursor:pointer}.upload-inner{pointer-events:none}.upload .upicon{font-size:30px;color:var(--purple2)}.upload strong{display:block;margin:6px 0}.upload small{color:var(--muted)}#preview{display:none;max-width:100%;max-height:290px;border-radius:10px;object-fit:contain}.fields{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:14px 0}.field label{display:block;color:var(--muted);font-size:11px;margin:0 0 6px}.field select,.field input,.prompt{width:100%;border:1px solid var(--line);border-radius:10px;background:#0e0c16;color:var(--text);padding:11px;outline:none}.field select:focus,.field input:focus,.prompt:focus{border-color:var(--purple)}.prompt{resize:vertical;min-height:85px}.primary{border:0;border-radius:11px;background:linear-gradient(100deg,#7959e8,#987cff);color:white;font-weight:750;padding:12px 18px;width:100%;margin-top:12px;box-shadow:0 8px 22px #7959e833}.primary:hover{filter:brightness(1.08)}.notice{font-size:11px;color:#aaa3bb;margin:10px 0 0}.right-stack{display:grid;gap:18px;align-content:start}.signal-top{display:flex;justify-content:space-between;align-items:center}.demo{font-size:10px;color:#d5caff;background:#30264d;border-radius:20px;padding:4px 8px}.signal-symbol{font-size:23px;font-weight:800;margin:15px 0 2px}.signal-dir{color:var(--green);font-size:12px;font-weight:800;letter-spacing:1px}.signal-desc{font-size:12px;color:var(--muted);margin-top:8px}.levels{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:17px}.level{background:#0e0c16;border:1px solid var(--line);border-radius:10px;padding:9px}.level small{display:block;color:var(--muted);font-size:10px}.level b{font-size:13px}.news-item{display:flex;gap:10px;padding:11px 0;border-top:1px solid var(--line)}.news-dot{width:8px;height:8px;background:var(--purple2);border-radius:50%;margin-top:6px;flex:none}.news-item strong{font-size:12px;display:block}.news-item small{color:var(--muted);font-size:11px}.feature-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:13px;margin-top:20px}.feature{background:#14121f;border:1px solid var(--line);border-radius:14px;padding:15px}.feature .ico{font-size:20px}.feature strong{display:block;font-size:12px;margin:7px 0 3px}.feature p{font-size:11px;color:var(--muted);margin:0}.section-head{display:flex;align-items:end;justify-content:space-between;margin:28px 0 12px}.section-head h2{font-size:17px;margin:0}.section-head span{font-size:11px;color:var(--muted)}.toast{display:none;margin-top:12px;padding:11px 13px;border-radius:10px;background:#29213e;border:1px solid #514078;color:#e7ddff;font-size:12px}.footer{margin-top:30px;text-align:center;color:#777188;font-size:11px}.mobilebar{display:none}
+@media(max-width:950px){.sidebar{width:205px}.main{margin-left:205px;width:calc(100% - 205px)}.grid{grid-template-columns:1fr}.right-stack{grid-template-columns:1fr 1fr}.feature-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:650px){.sidebar{display:none}.main{margin:0;width:100%;padding:20px 15px 85px}.top{margin-bottom:22px}.user-chip{font-size:10px}.right-stack{grid-template-columns:1fr}.feature-grid{grid-template-columns:repeat(2,1fr)}.card{padding:16px}.mobilebar{display:flex;position:fixed;bottom:0;left:0;right:0;z-index:10;background:#100e19;border-top:1px solid var(--line);justify-content:space-around;padding:10px 4px calc(10px + env(safe-area-inset-bottom))}.mobilebar a{color:var(--muted);font-size:10px;text-decoration:none;text-align:center}.mobilebar span{display:block;font-size:18px}.fields{gap:9px}.levels{gap:5px}.level{padding:8px 6px}}
+</style>
+</head>
+<body>
+<div class="shell">
+<aside class="sidebar">
+  <div class="brand"><div class="logo">S</div> SENTINEL <span style="color:var(--purple2)">AI</span></div>
+  <div class="nav-label">WORKSPACE</div>
+  <nav class="nav">
+    <a class="active" href="#dashboard"><span class="nav-icon">◫</span> Dashboard</a>
+    <a href="#analysis"><span class="nav-icon">⌕</span> Chart analysis</a>
+    <a href="#setups"><span class="nav-icon">⌁</span> Custom setups</a>
+    <a href="#signals"><span class="nav-icon">◎</span> Signal of the day</a>
+    <a href="#news"><span class="nav-icon">◷</span> Market news</a>
+  </nav>
+  <div class="side-bottom"><div class="free-tag"><strong>All features unlocked</strong>No subscription plans or payment page.</div></div>
+</aside>
+<main class="main" id="dashboard">
+  <header class="top"><div><div class="eyebrow">Trading intelligence workspace</div><h1>Good morning, Trader.</h1></div><div class="user-chip">✦ SENTINEL AI · FREE ACCESS</div></header>
+  <section class="grid">
+    <div class="card" id="analysis">
+      <h2>Direct AI chart analysis</h2><p class="sub">Upload a TradingView or MT5 chart screenshot to prepare an analysis.</p>
+      <div class="upload" id="drop">
+        <input type="file" id="chartFile" accept="image/*" aria-label="Upload chart image">
+        <div class="upload-inner" id="uploadText"><div class="upicon">⇧</div><strong>Upload your chart screenshot</strong><small>Tap to choose an image from your iPhone</small></div>
+        <img id="preview" alt="Uploaded chart preview">
+      </div>
+      <div class="fields">
+        <div class="field"><label for="symbol">MARKET</label><select id="symbol"><option>XAUUSD</option><option>BTCUSD</option><option>EURUSD</option><option>GBPUSD</option><option>US30</option><option>NAS100</option></select></div>
+        <div class="field"><label for="timeframe">TIMEFRAME</label><select id="timeframe"><option>M5</option><option>M15</option><option>H1</option><option>H4</option><option>D1</option><option>W1</option></select></div>
+      </div>
+      <div class="field"><label for="prompt">WHAT SHOULD SENTINEL CHECK?</label><textarea class="prompt" id="prompt" placeholder="Example: Identify trend, market structure, liquidity sweep, order blocks, FVG, and a possible entry with SL and TP."></textarea></div>
+      <button class="primary" id="analyzeBtn">Prepare chart analysis →</button>
+      <div class="toast" id="toast">Your chart is selected. The AI analysis engine still needs to be connected before live analysis can run.</div>
+      <p class="notice">This prototype does not execute trades or connect to a broker. AI analysis requires a securely connected backend.</p>
+    </div>
+    <div class="right-stack">
+      <div class="card" id="signals">
+        <div class="signal-top"><h2>Signal of the day</h2><span class="demo">DEMO PREVIEW</span></div>
+        <div class="signal-symbol">XAUUSD</div><div class="signal-dir">WAIT FOR CONFIRMATION</div>
+        <p class="signal-desc">A sample card showing where a verified setup will appear. No live signal is being issued.</p>
+        <div class="levels"><div class="level"><small>ENTRY</small><b>—</b></div><div class="level"><small>STOP LOSS</small><b>—</b></div><div class="level"><small>TARGET</small><b>—</b></div></div>
+      </div>
+      <div class="card" id="news">
+        <h2>AI market news</h2><p class="sub">Economic events to monitor</p>
+        <div class="news-item"><span class="news-dot"></span><div><strong>US CPI inflation</strong><small>High-impact event · Check release calendar</small></div></div>
+        <div class="news-item"><span class="news-dot"></span><div><strong>Nonfarm Payrolls (NFP)</strong><small>High-impact event · Check release calendar</small></div></div>
+        <div class="news-item"><span class="news-dot"></span><div><strong>Federal Reserve decisions</strong><small>Rates and USD volatility</small></div></div>
+        <p class="notice">Event examples only. Live calendar and news feeds are not connected yet.</p>
+      </div>
+    </div>
+  </section>
+  <div class="section-head" id="setups"><h2>Inside Sentinel AI</h2><span>Core workspace tools</span></div>
+  <section class="feature-grid">
+    <div class="feature"><div class="ico">🎯</div><strong>Direct chart analysis</strong><p>Upload chart images for structured review.</p></div>
+    <div class="feature"><div class="ico">💬</div><strong>Prompt trading UI</strong><p>Ask focused questions about the market.</p></div>
+    <div class="feature"><div class="ico">📊</div><strong>Advanced analysis</strong><p>Trend, structure, liquidity, OB and FVG.</p></div>
+    <div class="feature"><div class="ico">🧩</div><strong>Custom setups</strong><p>Build and save your preferred setup rules.</p></div>
+    <div class="feature"><div class="ico">⭐</div><strong>Signal of the day</strong><p>Display a setup only when verified.</p></div>
+    <div class="feature"><div class="ico">📰</div><strong>AI news trading</strong><p>Review NFP, CPI and major market events.</p></div>
+    <div class="feature"><div class="ico">🧠</div><strong>Smart chart analyzer</strong><p>Combine chart context into one clear report.</p></div>
+    <div class="feature"><div class="ico">⚡</div><strong>Fast processing</strong><p>Designed for a quick, mobile-first workflow.</p></div>
+  </section>
+  <div class="footer">SENTINEL AI · Analysis and education workspace · Trading involves risk.</div>
+</main>
+</div>
+<nav class="mobilebar"><a href="#dashboard"><span>◫</span>Home</a><a href="#analysis"><span>⌕</span>Analyze</a><a href="#setups"><span>⌁</span>Setups</a><a href="#signals"><span>◎</span>Signals</a><a href="#news"><span>◷</span>News</a></nav>
+<script>
+const fileInput=document.getElementById('chartFile'), preview=document.getElementById('preview'), uploadText=document.getElementById('uploadText'), toast=document.getElementById('toast');
+fileInput.addEventListener('change',()=>{
+ const file=fileInput.files&&fileInput.files[0]; if(!file)return;
+ if(!file.type.startsWith('image/')){toast.textContent='Please choose an image file.';toast.style.display='block';return;}
+ const reader=new FileReader();reader.onload=e=>{preview.src=e.target.result;preview.style.display='block';uploadText.style.display='none';toast.style.display='none';};reader.readAsDataURL(file);
+});
+document.getElementById('analyzeBtn').addEventListener('click',()=>{
+ const file=fileInput.files&&fileInput.files[0];
+ if(!file){toast.textContent='Upload a chart screenshot first.';toast.style.display='block';return;}
+ toast.textContent='Chart selected for '+document.getElementById('symbol').value+' · '+document.getElementById('timeframe').value+'. The AI analysis engine still needs a secure backend connection before it can produce results.';
+ toast.style.display='block';
+});
+</script>
+</body>
+</html>
